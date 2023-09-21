@@ -27,9 +27,9 @@ services:
   task:
     image: python:3.9
     restart: always
-    command: timeout 1m wget 'http://speed.cloudflare.com/__down?bytes=100000000000' --limit-rate 125M -O /dev/null
+    command: timeout 1m wget 'http://speed.cloudflare.com/__down?bytes=100000000000' --limit-rate 25M -O /dev/null
     deploy:
-      replicas: 4
+      replicas: 1
 EOL
 echo "docker-compose.yml created successfully."
 

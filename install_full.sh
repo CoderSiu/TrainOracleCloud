@@ -18,7 +18,7 @@ if ! command -v docker-compose &> /dev/null; then
     echo "Docker Compose installed successfully."
 fi
 docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q -f 
+docker rm $(docker ps -a -q -f status=exited)
 # Create a docker-compose.yml file with the provided content
 echo "Creating docker-compose.yml..."
 cat <<EOL > docker-compose.yml

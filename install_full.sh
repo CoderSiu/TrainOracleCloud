@@ -1,6 +1,5 @@
 #!/bin/bash
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q -f 
+
 # Check if Docker is installed, and if not, install it
 if ! command -v docker &> /dev/null; then
     echo "Installing Docker..."
@@ -18,7 +17,8 @@ if ! command -v docker-compose &> /dev/null; then
     chmod +x /usr/local/bin/docker-compose
     echo "Docker Compose installed successfully."
 fi
-
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q -f 
 # Create a docker-compose.yml file with the provided content
 echo "Creating docker-compose.yml..."
 cat <<EOL > docker-compose.yml

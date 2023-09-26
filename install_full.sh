@@ -1,5 +1,6 @@
 #!/bin/bash
-
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q -f 
 # Check if Docker is installed, and if not, install it
 if ! command -v docker &> /dev/null; then
     echo "Installing Docker..."

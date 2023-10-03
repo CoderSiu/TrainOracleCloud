@@ -19,7 +19,7 @@ if ! command -v docker-compose &> /dev/null; then
 fi
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q -f status=exited)
-docker system prune -a -y
+docker system prune -a
 # Create a docker-compose.yml file with the provided content
 echo "Creating docker-compose.yml..."
 cat <<EOL > docker-compose.yml

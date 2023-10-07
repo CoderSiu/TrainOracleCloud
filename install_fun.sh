@@ -29,7 +29,7 @@ services:
   task:
     image: python:3.9
     restart: always
-    command: timeout 3m wget 'http://speed.cloudflare.com/__down?bytes=1000000000' --limit-rate 25M -O /dev/null
+    command: timeout 15m wget 'http://speed.cloudflare.com/__down?bytes=1000000000' --limit-rate 40M -O /dev/null
     deploy:
       replicas: 1
 EOL
